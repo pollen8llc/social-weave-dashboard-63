@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
-import { Users, BarChart2, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 const NetworkInfo = ({ handleBoxClick }) => {
   return (
@@ -22,13 +22,13 @@ const NetworkInfo = ({ handleBoxClick }) => {
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('socialGraph')}>
               <div className="flex flex-col items-center space-y-2">
-                <Users className="h-8 w-8" />
+                <span className="text-3xl font-bold">0.68</span>
                 <span className="text-sm text-center">Network Density</span>
               </div>
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('networkGrowth')}>
               <div className="flex flex-col items-center space-y-2">
-                <BarChart2 className="h-8 w-8" />
+                <span className="text-3xl font-bold">78</span>
                 <span className="text-sm text-center">Network Density Score</span>
               </div>
             </Card>
