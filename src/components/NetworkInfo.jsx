@@ -5,6 +5,9 @@ import { Card } from "@/components/ui/card";
 import { Globe } from 'lucide-react';
 
 const NetworkInfo = ({ handleBoxClick }) => {
+  const connections = 740; // This should be dynamically fetched or passed as a prop
+  const networkDensity = (connections * 3.14).toFixed(2);
+
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
@@ -22,14 +25,14 @@ const NetworkInfo = ({ handleBoxClick }) => {
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('socialGraph')}>
               <div className="flex flex-col items-center space-y-2">
-                <span className="text-3xl font-bold">0.68</span>
+                <span className="text-3xl font-bold">{networkDensity}</span>
                 <span className="text-sm text-center">Network Density</span>
               </div>
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('networkGrowth')}>
               <div className="flex flex-col items-center space-y-2">
-                <span className="text-3xl font-bold">78</span>
-                <span className="text-sm text-center">Network Density Score</span>
+                <span className="text-3xl font-bold">{connections}</span>
+                <span className="text-sm text-center">Connections</span>
               </div>
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('networkDistribution')}>
