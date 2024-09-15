@@ -7,10 +7,15 @@ import NetworkInfo from './NetworkInfo';
 const Dashboard = () => {
   const [activeSection, setActiveSection] = useState('default');
   const [showUserList, setShowUserList] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const handleBoxClick = (section) => {
     setActiveSection(section);
     setShowUserList(section === 'connections');
+  };
+
+  const handleUserClick = (userId) => {
+    setSelectedUser(userId);
   };
 
   return (
@@ -18,7 +23,7 @@ const Dashboard = () => {
       <div className="flex-1 flex flex-col lg:flex-row min-h-[500px]">
         <div className="w-full lg:w-2/3 p-4">
           <Card className="h-full">
-            <DashboardContent activeSection={activeSection} />
+            <DashboardContent activeSection={activeSection} selectedUser={selectedUser} />
           </Card>
         </div>
         <div className="w-full lg:w-1/3 p-4">
@@ -27,7 +32,12 @@ const Dashboard = () => {
       </div>
       <div className="w-full p-4">
         <Card className="min-h-[300px] overflow-y-auto">
-          <NetworkFeed activeSection={activeSection} showUserList={showUserList} />
+          <NetworkFeed 
+            activeSection={activeSection} 
+            showUserList={showUserList} 
+            onUserClick={handleUserClick}
+            selectedUser={selectedUser}
+          />
         </Card>
       </div>
     </div>
