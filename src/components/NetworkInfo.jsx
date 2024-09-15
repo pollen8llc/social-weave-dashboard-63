@@ -29,7 +29,7 @@ const NetworkInfo = ({ handleBoxClick }) => {
                 <span className="text-sm text-center">Network Density</span>
               </div>
             </Card>
-            <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('networkGrowth')}>
+            <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('connections')}>
               <div className="flex flex-col items-center space-y-2">
                 <span className="text-3xl font-bold">{connections}</span>
                 <span className="text-sm text-center">Connections</span>
