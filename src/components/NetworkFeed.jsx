@@ -11,33 +11,33 @@ const NetworkFeed = ({ activeSection }) => {
   ];
 
   return (
-    <div className="p-4 space-y-4">
-      <h2 className="text-2xl font-bold">Network Feed</h2>
-      {feedItems.map((item) => (
-        <Card key={item.id} className="p-4">
-          {item.type === "event" ? (
-            <div className="flex justify-between items-center">
-              <div>
+    <div className="p-4">
+      <h2 className="text-2xl font-bold mb-4">Network Feed</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {feedItems.map((item) => (
+          <Card key={item.id} className="p-4">
+            {item.type === "event" ? (
+              <div className="flex flex-col">
                 <p className="font-bold">UPCOMING EVENT</p>
                 <p>{item.content}</p>
+                <p className="mt-2">{item.date}</p>
               </div>
-              <p className="text-right">{item.date}</p>
-            </div>
-          ) : (
-            <>
-              <p className="font-bold">{item.user}</p>
-              <p>{item.content}</p>
-              {item.poll && (
-                <div className="mt-2">
-                  {item.poll.map((option, index) => (
-                    <div key={index} className="bg-gray-200 p-2 mt-1 rounded">{option}</div>
-                  ))}
-                </div>
-              )}
-            </>
-          )}
-        </Card>
-      ))}
+            ) : (
+              <>
+                <p className="font-bold">{item.user}</p>
+                <p>{item.content}</p>
+                {item.poll && (
+                  <div className="mt-2">
+                    {item.poll.map((option, index) => (
+                      <div key={index} className="bg-gray-200 p-2 mt-1 rounded">{option}</div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };

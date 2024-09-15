@@ -12,8 +12,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
-      <div className="flex-1 flex flex-col lg:flex-row">
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <div className="flex-1 flex flex-col lg:flex-row min-h-[500px]">
         <div className="w-full lg:w-2/3 p-4">
           <Card className="h-full">
             <DashboardContent activeSection={activeSection} />
@@ -24,7 +24,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="w-full p-4">
-        <Card className="h-64 overflow-y-auto">
+        <Card className="min-h-[300px] overflow-y-auto">
           <NetworkFeed activeSection={activeSection} />
         </Card>
       </div>

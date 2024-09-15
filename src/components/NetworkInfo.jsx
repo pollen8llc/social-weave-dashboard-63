@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
-import { MapPin, Users, BarChart2, Globe } from 'lucide-react';
+import { Users, BarChart2, Globe } from 'lucide-react';
 
 const NetworkInfo = ({ handleBoxClick }) => {
   return (
@@ -36,12 +36,6 @@ const NetworkInfo = ({ handleBoxClick }) => {
               <div className="flex items-center space-x-2">
                 <Globe className="h-5 w-5" />
                 <span>Network Distribution</span>
-              </div>
-            </Card>
-            <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('location')}>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5" />
-                <span>My Location</span>
               </div>
             </Card>
           </div>

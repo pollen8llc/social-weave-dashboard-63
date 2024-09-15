@@ -60,13 +60,6 @@ const NetworkDistributionMap = () => (
   </div>
 );
 
-const UserLocation = () => (
-  <div className="p-4">
-    <h2 className="text-2xl font-bold mb-4">My Location</h2>
-    <p>User's location information goes here...</p>
-  </div>
-);
-
 const DashboardContent = ({ activeSection }) => {
   switch (activeSection) {
     case 'profile':
@@ -77,8 +70,6 @@ const DashboardContent = ({ activeSection }) => {
       return <NetworkGrowthChart />;
     case 'networkDistribution':
       return <NetworkDistributionMap />;
-    case 'location':
-      return <UserLocation />;
     default:
       return <PlexusAnimation />;
   }
