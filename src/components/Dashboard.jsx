@@ -21,13 +21,15 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <div className="flex-1 flex flex-col lg:flex-row min-h-[500px]">
-        <div className="w-full lg:w-2/3 p-4">
+        <div className="w-full lg:w-1/2 p-4">
           <Card className="h-full">
             <DashboardContent activeSection={activeSection} selectedUser={selectedUser} />
           </Card>
         </div>
-        <div className="w-full lg:w-1/3 p-4">
-          <NetworkInfo handleBoxClick={handleBoxClick} />
+        <div className="w-full lg:w-1/2 p-4">
+          <Card className="h-full">
+            <NetworkInfo handleBoxClick={handleBoxClick} />
+          </Card>
         </div>
       </div>
       <div className="w-full p-4">
