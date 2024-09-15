@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-const NetworkFeed = ({ activeSection, showUserList }) => {
+const NetworkFeed = ({ activeSection, showUserList, onUserClick, selectedUser }) => {
   const feedItems = [
     { id: 1, user: "Tim Burkley", content: "This is a status update. I'm on the internet today!" },
     { id: 2, user: "Amber James", content: "This is a status update. I'm on the internet today!" },
@@ -25,7 +25,11 @@ const NetworkFeed = ({ activeSection, showUserList }) => {
         <h2 className="text-2xl font-bold mb-4">Network Connections</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {userList.map((user) => (
-            <Card key={user.id} className="p-4 flex items-center space-x-4">
+            <Card 
+              key={user.id} 
+              className={`p-4 flex items-center space-x-4 cursor-pointer ${selectedUser === user.id ? 'bg-blue-100' : ''}`}
+              onClick={() => onUserClick(user.id)}
+            >
               <Avatar>
                 <AvatarImage src={user.avatar} alt={user.name} />
                 <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>

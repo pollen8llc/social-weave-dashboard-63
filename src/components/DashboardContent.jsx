@@ -15,7 +15,7 @@ const UserProfile = () => (
   </div>
 );
 
-const SocialGraph = () => {
+const SocialGraph = ({ selectedUser }) => {
   const graphData = {
     nodes: [
       { id: 'User', group: 1 },
@@ -52,7 +52,7 @@ const SocialGraph = () => {
             const textWidth = ctx.measureText(label).width;
             const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2);
 
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillStyle = node.id === `Connection ${selectedUser}` ? 'rgba(255, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)';
             ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
 
             ctx.textAlign = 'center';
@@ -105,14 +105,13 @@ const NetworkDistributionMap = () => (
   </div>
 );
 
-const DashboardContent = ({ activeSection }) => {
+const DashboardContent = ({ activeSection, selectedUser }) => {
   switch (activeSection) {
     case 'profile':
       return <UserProfile />;
     case 'socialGraph':
-      return <SocialGraph />;
     case 'connections':
-      return <SocialGraph />;
+      return <SocialGraph selectedUser={selectedUser} />;
     case 'networkGrowth':
       return <NetworkGrowthChart />;
     case 'networkDistribution':
