@@ -10,32 +10,32 @@ const NetworkInfo = ({ handleBoxClick }) => {
       <AccordionItem value="item-1">
         <AccordionTrigger>Network Information</AccordionTrigger>
         <AccordionContent>
-          <div className="space-y-2">
+          <div className="grid grid-cols-2 gap-2">
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('profile')}>
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-col items-center space-y-2">
                 <Avatar>
                   <AvatarImage src="/placeholder.svg" alt="User" />
                   <AvatarFallback>JF</AvatarFallback>
                 </Avatar>
-                <span>Joseph Franco</span>
+                <span className="text-sm text-center">Joseph Franco</span>
               </div>
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('socialGraph')}>
-              <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5" />
-                <span>Network Density</span>
+              <div className="flex flex-col items-center space-y-2">
+                <Users className="h-8 w-8" />
+                <span className="text-sm text-center">Network Density</span>
               </div>
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('networkGrowth')}>
-              <div className="flex items-center space-x-2">
-                <BarChart2 className="h-5 w-5" />
-                <span>Network Density Score</span>
+              <div className="flex flex-col items-center space-y-2">
+                <BarChart2 className="h-8 w-8" />
+                <span className="text-sm text-center">Network Density Score</span>
               </div>
             </Card>
             <Card className="p-2 cursor-pointer" onClick={() => handleBoxClick('networkDistribution')}>
-              <div className="flex items-center space-x-2">
-                <Globe className="h-5 w-5" />
-                <span>Network Distribution</span>
+              <div className="flex flex-col items-center space-y-2">
+                <Globe className="h-8 w-8" />
+                <span className="text-sm text-center">Network Distribution</span>
               </div>
             </Card>
           </div>
